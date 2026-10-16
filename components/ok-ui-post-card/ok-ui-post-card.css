@@ -1,0 +1,16 @@
+:host { display: block; min-width: 0; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+article { padding: 18px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); }
+header { display: flex; align-items: center; gap: 10px; }
+.avatar { display: grid; place-items: center; flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--ok-surface-alt, #edf2fa); color: var(--ok-primary, #7aa2f7); font-size: 12px; font-weight: 700; }
+header > div { display: grid; gap: 3px; min-width: 0; }
+header strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; }
+header div span { color: var(--ok-muted, #56657e); font-size: 11px; }
+p { margin: 14px 0; font-size: 14px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+img { display: block; width: 100%; max-height: 320px; object-fit: contain; border-radius: 4px; background: var(--ok-surface-alt, #edf2fa); }
+.actions { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
+button { display: inline-flex; align-items: center; gap: 6px; min-width: 44px; min-height: 44px; padding: 0 4px; border: 0; background: transparent; color: var(--ok-muted, #56657e); font: 20px var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button span { font-size: 12px; }
+button[aria-pressed='true'] { color: var(--ok-danger, #c53b54); }
+button:hover { color: var(--ok-primary, #7aa2f7); }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); }

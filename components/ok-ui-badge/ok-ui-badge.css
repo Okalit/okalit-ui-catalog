@@ -1,0 +1,5 @@
+:host { display: inline-flex; font-family: var(--ok-font, 'DM Sans', sans-serif); }
+span { display: inline-flex; align-items: center; min-height: 24px; padding: 3px 9px; border-radius: 4px; background: var(--ok-surface-alt, #edf2fa); color: var(--ok-text, #1a2840); font: 600 11px/1.3 var(--ok-font, 'DM Sans', sans-serif); }
+.primary { background: var(--ok-primary, #7aa2f7); color: var(--ok-primary-contrast, #101e3a); }
+.secondary { background: var(--ok-primary-2, #00d4ff); color: #062b39; }
+.danger { background: var(--ok-danger, #c53b54); color: #fff; }

@@ -1,0 +1,13 @@
+:host { display: block; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+article { display: flex; gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--ok-border, #cbd5e5); }
+.avatar { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; background: var(--ok-primary, #7aa2f7); color: var(--ok-primary-contrast, #101e3a); font-size: 12px; font-weight: 700; }
+.body { min-width: 0; flex: 1; }
+.meta { display: flex; align-items: baseline; gap: 8px; }
+.meta strong { font-size: 13px; }
+time { color: var(--ok-muted, #56657e); font-size: 11px; }
+p { margin: 6px 0; font-size: 13px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.actions { display: flex; gap: 12px; }
+button { min-height: 32px; padding: 0 3px; border: 0; background: transparent; color: var(--ok-muted, #56657e); font: 600 11px var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button[aria-pressed='true'] { color: var(--ok-danger, #c53b54); }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); }

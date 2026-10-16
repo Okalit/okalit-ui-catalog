@@ -1,0 +1,9 @@
+:host { display: block; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+div[role] { display: flex; align-items: flex-start; gap: 12px; padding: 13px 14px; border: 1px solid var(--ok-border, #cbd5e5); border-left: 3px solid var(--ok-primary, #7aa2f7); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); }
+.success { border-left-color: var(--ok-primary-2, #00d4ff); }
+.danger { border-left-color: var(--ok-danger, #c53b54); }
+.content { min-width: 0; flex: 1; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+strong { display: block; margin-bottom: 3px; font-size: 14px; }
+button { flex: none; width: 30px; height: 30px; margin: -6px -7px 0 0; border: 0; background: transparent; color: var(--ok-muted, #56657e); font: 24px/1 var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); }

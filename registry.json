@@ -1,0 +1,163 @@
+{
+  "components": {
+    "ok-ui-button": {
+      "type": "component",
+      "path": "components/ok-ui-button",
+      "files": ["ok-ui-button.js", "ok-ui-button.css"],
+      "channels": [],
+      "dependencies": []
+    },
+    "ok-ui-icon": {
+      "type": "component", "path": "components/ok-ui-icon",
+      "files": ["ok-ui-icon.js", "ok-ui-icon.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-link": {
+      "type": "component", "path": "components/ok-ui-link",
+      "files": ["ok-ui-link.js", "ok-ui-link.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-badge": {
+      "type": "component", "path": "components/ok-ui-badge",
+      "files": ["ok-ui-badge.js", "ok-ui-badge.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-card": {
+      "type": "component", "path": "components/ok-ui-card",
+      "files": ["ok-ui-card.js", "ok-ui-card.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-input": {
+      "type": "component", "path": "components/ok-ui-input",
+      "files": ["ok-ui-input.js", "ok-ui-input.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-textarea": {
+      "type": "component", "path": "components/ok-ui-textarea",
+      "files": ["ok-ui-textarea.js", "ok-ui-textarea.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-checkbox": {
+      "type": "component", "path": "components/ok-ui-checkbox",
+      "files": ["ok-ui-checkbox.js", "ok-ui-checkbox.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-select": {
+      "type": "component", "path": "components/ok-ui-select",
+      "files": ["ok-ui-select.js", "ok-ui-select.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-calendar": {
+      "type": "component", "path": "components/ok-ui-calendar",
+      "files": ["ok-ui-calendar.js", "ok-ui-calendar.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-switch": {
+      "type": "component", "path": "components/ok-ui-switch",
+      "files": ["ok-ui-switch.js", "ok-ui-switch.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-avatar": {
+      "type": "component", "path": "components/ok-ui-avatar",
+      "files": ["ok-ui-avatar.js", "ok-ui-avatar.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-chat-bubble": {
+      "type": "component", "path": "components/ok-ui-chat-bubble",
+      "files": ["ok-ui-chat-bubble.js", "ok-ui-chat-bubble.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-tabs": {
+      "type": "component", "path": "components/ok-ui-tabs",
+      "files": ["ok-ui-tabs.js", "ok-ui-tabs.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-dialog": {
+      "type": "component", "path": "components/ok-ui-dialog",
+      "files": ["ok-ui-dialog.js", "ok-ui-dialog.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-radio-group": {
+      "type": "component", "path": "components/ok-ui-radio-group",
+      "files": ["ok-ui-radio-group.js", "ok-ui-radio-group.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-file-upload": {
+      "type": "component", "path": "components/ok-ui-file-upload",
+      "files": ["ok-ui-file-upload.js", "ok-ui-file-upload.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-alert": {
+      "type": "component", "path": "components/ok-ui-alert",
+      "files": ["ok-ui-alert.js", "ok-ui-alert.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-toast": {
+      "type": "component", "path": "components/ok-ui-toast",
+      "files": ["ok-ui-toast.js", "ok-ui-toast.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-loading": {
+      "type": "component", "path": "components/ok-ui-loading",
+      "files": ["ok-ui-loading.js", "ok-ui-loading.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-empty-state": {
+      "type": "component", "path": "components/ok-ui-empty-state",
+      "files": ["ok-ui-empty-state.js", "ok-ui-empty-state.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-chat-composer": {
+      "type": "component", "path": "components/ok-ui-chat-composer",
+      "files": ["ok-ui-chat-composer.js", "ok-ui-chat-composer.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-data-grid": {
+      "type": "component", "path": "components/ok-ui-data-grid",
+      "files": ["ok-ui-data-grid.js", "ok-ui-data-grid.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-combobox": {
+      "type": "component", "path": "components/ok-ui-combobox",
+      "files": ["ok-ui-combobox.js", "ok-ui-combobox.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-date-range": {
+      "type": "component", "path": "components/ok-ui-date-range",
+      "files": ["ok-ui-date-range.js", "ok-ui-date-range.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-drawer": {
+      "type": "component", "path": "components/ok-ui-drawer",
+      "files": ["ok-ui-drawer.js", "ok-ui-drawer.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-post-card": {
+      "type": "component", "path": "components/ok-ui-post-card",
+      "files": ["ok-ui-post-card.js", "ok-ui-post-card.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-comment": {
+      "type": "component", "path": "components/ok-ui-comment",
+      "files": ["ok-ui-comment.js", "ok-ui-comment.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-reaction-bar": {
+      "type": "component", "path": "components/ok-ui-reaction-bar",
+      "files": ["ok-ui-reaction-bar.js", "ok-ui-reaction-bar.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-conversation-list": {
+      "type": "component", "path": "components/ok-ui-conversation-list",
+      "files": ["ok-ui-conversation-list.js", "ok-ui-conversation-list.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-chart": {
+      "type": "component", "path": "components/ok-ui-chart",
+      "files": ["ok-ui-chart.js", "ok-ui-chart.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-rich-editor": {
+      "type": "component", "path": "components/ok-ui-rich-editor",
+      "files": ["ok-ui-rich-editor.js", "ok-ui-rich-editor.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-code-editor": {
+      "type": "component", "path": "components/ok-ui-code-editor",
+      "files": ["ok-ui-code-editor.js", "ok-ui-code-editor.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-sortable-list": {
+      "type": "component", "path": "components/ok-ui-sortable-list",
+      "files": ["ok-ui-sortable-list.js", "ok-ui-sortable-list.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-kanban-board": {
+      "type": "component", "path": "components/ok-ui-kanban-board",
+      "files": ["ok-ui-kanban-board.js", "ok-ui-kanban-board.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-media-preview": {
+      "type": "component", "path": "components/ok-ui-media-preview",
+      "files": ["ok-ui-media-preview.js", "ok-ui-media-preview.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-pagination": {
+      "type": "component", "path": "components/ok-ui-pagination",
+      "files": ["ok-ui-pagination.js", "ok-ui-pagination.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-popover": {
+      "type": "component", "path": "components/ok-ui-popover",
+      "files": ["ok-ui-popover.js", "ok-ui-popover.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-skeleton": {
+      "type": "component", "path": "components/ok-ui-skeleton",
+      "files": ["ok-ui-skeleton.js", "ok-ui-skeleton.css"], "channels": [], "dependencies": []
+    }
+  }
+}

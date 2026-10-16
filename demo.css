@@ -1,0 +1,57 @@
+@import './tokens.css';
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    background: var(--ok-background);
+    color: var(--ok-text);
+    font-family: var(--ok-font);
+}
+
+.catalog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 62px;
+    padding: 0 clamp(16px, 3vw, 36px);
+    border-bottom: 1px solid var(--ok-border);
+    background: var(--ok-surface);
+}
+
+.catalog-header a {
+    color: var(--ok-text);
+    text-decoration: none;
+    font: 700 16px 'Space Mono', monospace;
+}
+
+.catalog-header a span {
+    color: #456fc6;
+}
+
+.catalog-header p {
+    color: var(--ok-muted);
+    font: 11px 'Space Mono', monospace;
+}
+
+.catalog-header p span {
+    color: #456fc6;
+}
+
+okalit-demo-components {
+    display: block;
+    min-height: 100dvh;
+}
+
+@media (max-width: 420px) {
+    .catalog-header p {
+        font-size: 9px;
+    }
+}

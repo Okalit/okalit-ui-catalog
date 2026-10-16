@@ -1,0 +1,6 @@
+:host { display: inline-flex; font-family: var(--ok-font, 'DM Sans', sans-serif); }
+a { color: var(--ok-primary, #7aa2f7); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { color: var(--ok-primary-2, #00d4ff); }
+a:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: 3px; }
+a.quiet { color: var(--ok-muted, #56657e); text-decoration: none; }
+a.quiet:hover { color: var(--ok-primary, #7aa2f7); }

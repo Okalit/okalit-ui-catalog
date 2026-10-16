@@ -1,0 +1,100 @@
+:host {
+    display: inline-block;
+    font-family: var(--ok-font, 'DM Sans', sans-serif);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    width: 100%;
+    padding: 0 18px;
+    border: 1px solid transparent;
+    border-radius: var(--ok-radius, 8px);
+    font: 600 14px/1.2 var(--ok-font, 'DM Sans', sans-serif);
+    cursor: pointer;
+    transition: background .16s, border-color .16s, transform .16s;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--ok-primary-2, #00d4ff);
+    outline-offset: 3px;
+}
+
+button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.primary {
+    background: var(--ok-primary, #7aa2f7);
+    color: var(--ok-primary-contrast, #101e3a);
+}
+
+.primary:hover:not(:disabled) {
+    background: var(--ok-primary-2, #00d4ff);
+}
+
+.secondary {
+    background: var(--ok-surface, #fff);
+    color: var(--ok-text, #1a2840);
+    border-color: var(--ok-border, #cbd5e5);
+}
+
+.secondary:hover:not(:disabled) {
+    border-color: var(--ok-primary, #7aa2f7);
+}
+
+.ghost {
+    background: transparent;
+    color: var(--ok-primary, #7aa2f7);
+}
+
+.ghost:hover:not(:disabled) {
+    background: var(--ok-surface-alt, #edf2fa);
+}
+
+.danger {
+    background: var(--ok-danger, #c53b54);
+    color: var(--ok-surface, #fff);
+}
+
+.danger:hover:not(:disabled) {
+    opacity: .85;
+}
+
+.sm {
+    min-height: 36px;
+    padding: 0 13px;
+    font-size: 12px;
+}
+
+.lg {
+    min-height: 52px;
+    padding: 0 23px;
+    font-size: 16px;
+}
+
+::slotted(*) {
+    flex: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+}

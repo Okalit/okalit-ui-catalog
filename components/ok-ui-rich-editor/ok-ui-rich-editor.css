@@ -1,0 +1,16 @@
+:host { display: block; width: 100%; min-width: 0; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+section { border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); overflow: hidden; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px; padding: 7px 10px; border-bottom: 1px solid var(--ok-border, #cbd5e5); }
+.toolbar > span { color: var(--ok-muted, #56657e); font-size: 12px; font-weight: 700; }
+.toolbar > div { display: flex; gap: 2px; flex-wrap: wrap; }
+button { min-width: 34px; height: 36px; padding: 0 6px; border: 0; border-radius: 4px; background: transparent; color: var(--ok-text, #1a2840); font: 700 13px var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button:hover, button[aria-pressed='true'] { background: var(--ok-surface-alt, #edf2fa); color: var(--ok-primary, #7aa2f7); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); }
+.editor { min-height: 160px; max-height: 320px; overflow-y: auto; padding: 12px 16px; }
+.editor .tiptap { min-height: 135px; outline: none; font-size: 14px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.editor:focus-within { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: -2px; }
+.editor h2 { margin: 8px 0; font-size: 19px; }
+.editor p { margin: 0 0 10px; }
+.editor ul { padding-left: 22px; }

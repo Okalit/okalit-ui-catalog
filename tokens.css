@@ -1,0 +1,29 @@
+:root, .ok-theme-light {
+  color-scheme: light;
+  --ok-background: #f4f7fc;
+  --ok-surface: #ffffff;
+  --ok-surface-alt: #edf2fa;
+  --ok-text: #1a2840;
+  --ok-muted: #56657e;
+  --ok-border: #cbd5e5;
+  --ok-primary: #7aa2f7;
+  --ok-primary-contrast: #101e3a;
+  --ok-primary-2: #00d4ff;
+  --ok-danger: #c53b54;
+  --ok-radius: 8px;
+  --ok-font: 'DM Sans', sans-serif;
+}
+
+.ok-theme-dark, [data-theme='dark'] {
+  color-scheme: dark;
+  --ok-background: #101925;
+  --ok-surface: #192637;
+  --ok-surface-alt: #243449;
+  --ok-text: #f2f7ff;
+  --ok-muted: #b1c2dc;
+  --ok-border: #425571;
+  --ok-primary: #91b4ff;
+  --ok-primary-contrast: #101e3a;
+  --ok-primary-2: #64def6;
+  --ok-danger: #ff8397;
+}

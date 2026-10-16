@@ -1,0 +1,5 @@
+:host { display: block; overflow-x: auto; font-family: var(--ok-font, 'DM Sans', sans-serif); }
+div { display: flex; min-width: max-content; gap: 18px; border-bottom: 1px solid var(--ok-border, #cbd5e5); }
+button { min-height: 44px; padding: 0 3px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--ok-muted, #56657e); font: 600 13px var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button[aria-selected='true'] { color: var(--ok-primary, #7aa2f7); border-bottom-color: var(--ok-primary, #7aa2f7); }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: -3px; }

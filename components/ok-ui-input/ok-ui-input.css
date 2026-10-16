@@ -1,0 +1,13 @@
+:host { display: block; min-width: 0; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+label { display: grid; gap: 7px; font-size: 13px; font-weight: 600; }
+.control { position: relative; display: block; }
+input { width: 100%; min-width: 0; height: 46px; padding: 0 13px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); color: var(--ok-text, #1a2840); font: 400 14px var(--ok-font, 'DM Sans', sans-serif); }
+.control.password input { padding-right: 86px; }
+button { position: absolute; inset: 1px 1px 1px auto; min-width: 76px; padding: 0 10px; border: 0; border-radius: 0 var(--ok-radius, 8px) var(--ok-radius, 8px) 0; background: var(--ok-surface, #fff); color: var(--ok-primary, #7aa2f7); font: 600 12px var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: -3px; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+input::placeholder { color: var(--ok-muted, #56657e); opacity: .8; }
+input:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: 1px; }
+input:disabled { opacity: .5; cursor: not-allowed; }
+small { display: block; margin-top: 6px; color: var(--ok-muted, #56657e); font-size: 11px; }

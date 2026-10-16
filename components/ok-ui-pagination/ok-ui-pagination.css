@@ -1,0 +1,10 @@
+:host { display: block; min-width: 0; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+.pagination { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.summary { color: var(--ok-muted, #56657e); font-size: 13px; font-variant-numeric: tabular-nums; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+button { display: grid; place-items: center; min-width: 36px; height: 36px; padding: 0 8px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); color: var(--ok-text, #1a2840); font: 600 14px var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button.page[aria-current="page"] { border-color: var(--ok-primary, #7aa2f7); background: var(--ok-primary, #7aa2f7); color: var(--ok-primary-contrast, #101e3a); }
+button:disabled { opacity: .48; cursor: default; }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: 2px; }
+@media (max-width: 420px) { .pagination { justify-content: center; } }

@@ -1,0 +1,11 @@
+:host { display: inline-flex; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+label { display: inline-flex; position: relative; align-items: center; justify-content: space-between; gap: 16px; min-height: 44px; font-size: 14px; cursor: pointer; }
+input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.track { display: flex; align-items: center; flex: none; width: 42px; height: 25px; padding: 3px; border-radius: 20px; background: var(--ok-border, #cbd5e5); transition: background .16s; }
+.thumb { width: 19px; height: 19px; border-radius: 50%; background: var(--ok-surface, #fff); box-shadow: 0 1px 3px #18283833; transition: transform .16s; }
+input:checked + .track { background: var(--ok-primary, #7aa2f7); }
+input:checked + .track .thumb { transform: translateX(17px); }
+input:focus-visible + .track { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: 3px; }
+input:disabled ~ .track, input:disabled ~ .text { opacity: .5; cursor: not-allowed; }
+@media (prefers-reduced-motion: reduce) { .track, .thumb { transition: none; } }

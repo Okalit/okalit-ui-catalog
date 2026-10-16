@@ -1,0 +1,6 @@
+:host { display: block; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+section { padding: 28px 18px; text-align: center; }
+.illustration { display: grid; place-items: center; width: 44px; height: 44px; margin: 0 auto 13px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface-alt, #edf2fa); color: var(--ok-primary, #7aa2f7); font-size: 22px; }
+h2 { margin: 0 0 7px; font-size: 16px; line-height: 1.4; }
+p { margin: 0; color: var(--ok-muted, #56657e); font-size: 13px; line-height: 1.5; }
+.action { margin-top: 14px; }

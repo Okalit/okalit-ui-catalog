@@ -1,0 +1,61 @@
+:host {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    color: var(--ok-muted, #56657e);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.text {
+    display: grid;
+    gap: 10px;
+    width: 100%;
+}
+
+.line,
+.shape {
+    display: block;
+    background: var(--ok-muted, #56657e);
+    animation: breathe 1.35s ease-in-out infinite;
+}
+
+.line {
+    width: 100%;
+    height: 14px;
+    border-radius: 4px;
+}
+
+.line:first-child {
+    width: 62%;
+    height: 18px;
+}
+
+.line:last-child:not(:first-child) {
+    width: 78%;
+}
+
+.shape {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+@keyframes breathe {
+    50% {
+        opacity: .42;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .line,
+    .shape {
+        animation: none;
+    }
+}

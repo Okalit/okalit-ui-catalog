@@ -1,0 +1,7 @@
+:host { display: inline-flex; vertical-align: middle; }
+svg { display: block; flex: none; }
+svg.text { color: var(--ok-icon-color, var(--ok-text, #1a2840)); }
+svg.primary { color: var(--ok-icon-color, var(--ok-primary, #7aa2f7)); }
+svg.secondary { color: var(--ok-icon-color, var(--ok-primary-2, #00d4ff)); }
+svg.muted { color: var(--ok-icon-color, var(--ok-muted, #56657e)); }
+svg.danger { color: var(--ok-icon-color, var(--ok-danger, #c53b54)); }

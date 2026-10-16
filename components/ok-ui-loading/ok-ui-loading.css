@@ -1,0 +1,10 @@
+:host { display: block; color: var(--ok-muted, #56657e); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+.spinner { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13px; }
+.spinner span { width: 20px; height: 20px; border: 2px solid var(--ok-border, #cbd5e5); border-top-color: var(--ok-primary, #7aa2f7); border-radius: 50%; animation: rotate .8s linear infinite; }
+.skeleton { display: grid; gap: 10px; width: 100%; }
+.skeleton span { height: 14px; border-radius: 4px; background: var(--ok-surface-alt, #edf2fa); animation: breathe 1.4s ease-in-out infinite; }
+.skeleton span:first-child { width: 45%; height: 20px; }
+.skeleton span:last-child { width: 70%; }
+@keyframes rotate { to { transform: rotate(360deg); } }
+@keyframes breathe { 50% { opacity: .42; } }
+@media (prefers-reduced-motion: reduce) { .spinner span, .skeleton span { animation: none; } }

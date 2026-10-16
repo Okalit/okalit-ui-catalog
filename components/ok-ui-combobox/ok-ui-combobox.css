@@ -1,0 +1,12 @@
+:host { display: block; min-width: 0; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+.field { position: relative; display: grid; gap: 7px; }
+label { font-size: 13px; font-weight: 600; }
+input { width: 100%; min-height: 46px; padding: 0 12px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); color: var(--ok-text, #1a2840); font: 14px var(--ok-font, 'DM Sans', sans-serif); }
+input:focus-visible, button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: 1px; }
+input:disabled { opacity: .5; }
+[role='listbox'] { position: absolute; top: 100%; left: 0; right: 0; z-index: 20; max-height: 220px; overflow-y: auto; margin-top: 4px; padding: 4px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); box-shadow: 0 12px 24px #17253922; }
+button { display: block; width: 100%; min-height: 42px; padding: 8px 10px; border: 0; border-radius: 4px; background: transparent; color: var(--ok-text, #1a2840); font: 13px var(--ok-font, 'DM Sans', sans-serif); text-align: left; cursor: pointer; }
+button.active, button:hover { background: var(--ok-surface-alt, #edf2fa); }
+button[aria-selected='true'] { color: var(--ok-primary, #7aa2f7); font-weight: 700; }
+.empty { display: block; padding: 12px; color: var(--ok-muted, #56657e); font-size: 12px; }

@@ -1,0 +1,9 @@
+:host { display: inline-block; position: relative; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+.anchor { position: relative; }
+button { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 12px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); color: inherit; font: 600 13px var(--ok-font, 'DM Sans', sans-serif); cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: 2px; }
+.panel { position: absolute; z-index: 10; left: 0; width: max-content; min-width: 200px; max-width: min(320px, calc(100vw - 32px)); padding: 14px; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); box-shadow: 0 10px 28px #10192526; color: var(--ok-text, #1a2840); font-size: 14px; line-height: 1.5; }
+.panel[hidden] { display: none; }
+.bottom .panel { top: calc(100% + 8px); }
+.top .panel { bottom: calc(100% + 8px); }

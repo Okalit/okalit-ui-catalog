@@ -1,0 +1,7 @@
+:host { display: block; width: 100%; min-width: 0; color: var(--ok-text, #1a2840); font-family: var(--ok-font, 'DM Sans', sans-serif); }
+* { box-sizing: border-box; }
+section { overflow: hidden; border: 1px solid var(--ok-border, #cbd5e5); border-radius: var(--ok-radius, 8px); background: var(--ok-surface, #fff); }
+header { display: flex; justify-content: space-between; gap: 8px; padding: 10px 13px; border-bottom: 1px solid var(--ok-border, #cbd5e5); font-size: 12px; }
+header span { color: var(--ok-muted, #56657e); }
+.editor { max-height: 320px; overflow-y: auto; }
+.editor:focus-within { outline: 2px solid var(--ok-primary-2, #00d4ff); outline-offset: -2px; }
