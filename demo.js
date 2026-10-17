@@ -417,4 +417,11 @@ catalog.setComponents([
       { label: { type: String, value: 'Cargando vista previa' } },
     ], slots: [], events: [], channels: [],
   },
+  {
+    name: 'Important Text', tag: 'ok-ui-important-text', description: 'Resaltador de texto.',
+    import: () => import('./components/ok-ui-important-text/ok-ui-important-text.js'),
+    props: [
+      { variant: { type: String, value: 'primary' } }
+    ], slots: [{ name: 'default', content: 'Mira por qué el 90%' }], events: [], channels: [],
+  },
 ]);

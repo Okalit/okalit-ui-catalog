@@ -9,7 +9,9 @@
   --ok-primary: #7aa2f7;
   --ok-primary-contrast: #101e3a;
   --ok-primary-2: #00d4ff;
+  --ok-success: #16a34a;
   --ok-danger: #c53b54;
+  --ok-warning: #d97706;
   --ok-radius: 8px;
   --ok-font: 'DM Sans', sans-serif;
 }
@@ -25,5 +27,7 @@
   --ok-primary: #91b4ff;
   --ok-primary-contrast: #101e3a;
   --ok-primary-2: #64def6;
+  --ok-success: #4ade80;
   --ok-danger: #ff8397;
+  --ok-warning: #fbbf24;
 }

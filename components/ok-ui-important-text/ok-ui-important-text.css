@@ -1,0 +1,43 @@
+span {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    padding: 0.15rem;
+    border-radius: 5px;
+}
+
+.primary {
+    background-color: color-mix(
+        in srgb,
+        var(--ok-primary) 35%,
+        transparent
+    );
+    border-bottom: 2.5px solid var(--ok-primary-2);
+}
+
+.success {
+    background-color: color-mix(
+        in srgb,
+        var(--ok-success) 35%,
+        transparent
+    );
+    border-bottom: 2.5px solid var(--ok-success);
+}
+
+.danger {
+    background-color: color-mix(
+        in srgb,
+        var(--ok-danger) 35%,
+        transparent
+    );
+    border-bottom: 2.5px solid var(--ok-danger);
+}
+
+.warning {
+    background-color: color-mix(
+        in srgb,
+        var(--ok-warning) 35%,
+        transparent
+    );
+    border-bottom: 2.5px solid var(--ok-warning);
+}

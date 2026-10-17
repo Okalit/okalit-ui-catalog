@@ -158,6 +158,10 @@
     "ok-ui-skeleton": {
       "type": "component", "path": "components/ok-ui-skeleton",
       "files": ["ok-ui-skeleton.js", "ok-ui-skeleton.css"], "channels": [], "dependencies": []
+    },
+    "ok-ui-important-text": {
+      "type": "component", "path": "components/ok-ui-important-text",
+      "files": ["ok-ui-important-text.js", "ok-ui-important-text.css"], "channels": [], "dependencies": []
     }
   }
 }
