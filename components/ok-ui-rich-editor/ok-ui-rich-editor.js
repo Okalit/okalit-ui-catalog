@@ -1,11 +1,15 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-rich-editor.css?inline';
 
-@defineElement({ tag: 'ok-ui-rich-editor', styles: [styles], props: [
-  { value: { type: String, value: '<p>Escribe algo interesante...</p>' } },
-  { label: { type: String, value: 'Contenido' } },
-  { disabled: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-rich-editor',
+  styles: [styles],
+  props: [
+    { value: { type: String, value: '<p>Escribe algo interesante...</p>' } },
+    { label: { type: String, value: 'Contenido' } },
+    { disabled: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiRichEditor extends Okalit {
   onAfterRender() {
     if (!this._editor) return this.ensureEditor();
@@ -14,7 +18,8 @@ export class OkUiRichEditor extends Okalit {
       if (this._editor.getHTML() !== this.value.value) {
         this._editor.commands.setContent(this.value.value, { emitUpdate: false });
       }
-      if (this._editor.isEditable === this.disabled.value) this._editor.setEditable(!this.disabled.value);
+      if (this._editor.isEditable === this.disabled.value)
+        this._editor.setEditable(!this.disabled.value);
       this._editor.view.dom.setAttribute('aria-label', this.label.value);
     } finally {
       this._syncing = false;
@@ -24,7 +29,10 @@ export class OkUiRichEditor extends Okalit {
   async ensureEditor() {
     if (this._loading) return;
     this._loading = (async () => {
-      const [{ Editor }, { default: StarterKit }] = await Promise.all([import('@tiptap/core'), import('@tiptap/starter-kit')]);
+      const [{ Editor }, { default: StarterKit }] = await Promise.all([
+        import('@tiptap/core'),
+        import('@tiptap/starter-kit'),
+      ]);
       if (!this.isConnected) return;
       const element = this.renderRoot.querySelector('.editor');
       if (!element) return;
@@ -38,11 +46,15 @@ export class OkUiRichEditor extends Okalit {
           this.value.value = value;
           this.output('ui-change', { value });
         },
-        onSelectionUpdate: () => { if (!this._syncing) this.requestUpdate(); },
+        onSelectionUpdate: () => {
+          if (!this._syncing) this.requestUpdate();
+        },
       });
       this._editor.view.dom.setAttribute('aria-label', this.label.value);
       this.requestUpdate();
-    })().finally(() => { this._loading = null; });
+    })().finally(() => {
+      this._loading = null;
+    });
   }
 
   command(action) {

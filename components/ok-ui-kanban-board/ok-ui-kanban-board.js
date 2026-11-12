@@ -5,11 +5,15 @@ import styles from './ok-ui-kanban-board.css?inline';
 
 let boardCounter = 0;
 
-@defineElement({ tag: 'ok-ui-kanban-board', styles: [styles], props: [
-  { columns: { type: Array, value: [] } },
-  { label: { type: String, value: 'Tablero de tareas' } },
-  { disabled: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-kanban-board',
+  styles: [styles],
+  props: [
+    { columns: { type: Array, value: [] } },
+    { label: { type: String, value: 'Tablero de tareas' } },
+    { disabled: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiKanbanBoard extends Okalit {
   constructor() {
     super();
@@ -20,39 +24,52 @@ export class OkUiKanbanBoard extends Okalit {
   }
 
   onAfterRender() {
-    this._sortables.forEach((sortable) => sortable.destroy());
-    this._sortables = [...this.renderRoot.querySelectorAll('.tasks')].map((list) => new Sortable(list, {
-      group: this._group,
-      animation: 150,
-      handle: '.grip',
-      draggable: '.task',
-      ghostClass: 'dragging',
-      delayOnTouchOnly: true,
-      delay: 160,
-      touchStartThreshold: 4,
-      disabled: this.disabled.value,
-      onEnd: (event) => {
-        const fromColumn = event.from.closest('[data-column-id]')?.dataset.columnId;
-        const toColumn = event.to.closest('[data-column-id]')?.dataset.columnId;
-        const siblings = [...event.from.children].filter((child) => child !== event.item);
-        event.from.insertBefore(event.item, siblings[event.oldIndex] || null);
-        this.move(fromColumn, toColumn, event.oldIndex, event.newIndex);
-      },
-    }));
+    this._sortables.forEach((sortable) => {
+      sortable.destroy();
+    });
+    this._sortables = [...this.renderRoot.querySelectorAll('.tasks')].map(
+      (list) =>
+        new Sortable(list, {
+          group: this._group,
+          animation: 150,
+          handle: '.grip',
+          draggable: '.task',
+          ghostClass: 'dragging',
+          delayOnTouchOnly: true,
+          delay: 160,
+          touchStartThreshold: 4,
+          disabled: this.disabled.value,
+          onEnd: (event) => {
+            const fromColumn = event.from.closest('[data-column-id]')?.dataset.columnId;
+            const toColumn = event.to.closest('[data-column-id]')?.dataset.columnId;
+            const siblings = [...event.from.children].filter((child) => child !== event.item);
+            event.from.insertBefore(event.item, siblings[event.oldIndex] || null);
+            this.move(fromColumn, toColumn, event.oldIndex, event.newIndex);
+          },
+        }),
+    );
     if (this._pendingFocus) {
       const { columnIndex, itemIndex } = this._pendingFocus;
-      this.renderRoot.querySelectorAll('.column')[columnIndex]?.querySelectorAll('.grip')[itemIndex]?.focus({ preventScroll: true });
+      this.renderRoot
+        .querySelectorAll('.column')
+        [columnIndex]?.querySelectorAll('.grip')
+        [itemIndex]?.focus({ preventScroll: true });
       this._pendingFocus = null;
     }
   }
 
   onDestroy() {
-    this._sortables.forEach((sortable) => sortable.destroy());
+    this._sortables.forEach((sortable) => {
+      sortable.destroy();
+    });
     this._sortables = [];
   }
 
   move(fromColumn, toColumn, fromIndex, toIndex) {
-    const columns = this.columns.value.map((column) => ({ ...column, items: [...(column.items || [])] }));
+    const columns = this.columns.value.map((column) => ({
+      ...column,
+      items: [...(column.items || [])],
+    }));
     const source = columns.find((column) => String(column.id) === String(fromColumn));
     const target = columns.find((column) => String(column.id) === String(toColumn));
     if (!source || !target || fromIndex < 0 || fromIndex >= source.items.length) return;
@@ -63,7 +80,14 @@ export class OkUiKanbanBoard extends Okalit {
     this._revision++;
     this.columns.value = columns;
     this._announcement = `${item.title} movida a ${target.title}, posicion ${index + 1}`;
-    this.output('ui-move', { id: String(item.id), fromColumn: String(fromColumn), toColumn: String(toColumn), fromIndex, toIndex: index, columns });
+    this.output('ui-move', {
+      id: String(item.id),
+      fromColumn: String(fromColumn),
+      toColumn: String(toColumn),
+      fromIndex,
+      toIndex: index,
+      columns,
+    });
   }
 
   keydown(event, columnIndex, itemIndex) {
@@ -72,14 +96,17 @@ export class OkUiKanbanBoard extends Okalit {
     let targetColumnIndex = columnIndex;
     let targetIndex = itemIndex;
     if (event.key === 'ArrowUp') targetIndex = Math.max(0, itemIndex - 1);
-    else if (event.key === 'ArrowDown') targetIndex = Math.min(column.items.length - 1, itemIndex + 1);
+    else if (event.key === 'ArrowDown')
+      targetIndex = Math.min(column.items.length - 1, itemIndex + 1);
     else if (event.key === 'Home') targetIndex = 0;
     else if (event.key === 'End') targetIndex = column.items.length - 1;
     else if (event.key === 'ArrowLeft') targetColumnIndex = Math.max(0, columnIndex - 1);
-    else if (event.key === 'ArrowRight') targetColumnIndex = Math.min(columns.length - 1, columnIndex + 1);
+    else if (event.key === 'ArrowRight')
+      targetColumnIndex = Math.min(columns.length - 1, columnIndex + 1);
     else return;
     event.preventDefault();
-    if (targetColumnIndex !== columnIndex) targetIndex = Math.min(itemIndex, columns[targetColumnIndex].items.length);
+    if (targetColumnIndex !== columnIndex)
+      targetIndex = Math.min(itemIndex, columns[targetColumnIndex].items.length);
     if (targetColumnIndex === columnIndex && targetIndex === itemIndex) return;
     this._pendingFocus = { columnIndex: targetColumnIndex, itemIndex: targetIndex };
     this.move(column.id, columns[targetColumnIndex].id, itemIndex, targetIndex);

@@ -1,13 +1,11 @@
-import { Okalit, defineElement, html } from "@okalit/core";
+import { defineElement, html, Okalit } from '@okalit/core';
 
-import styles from "./ok-ui-important-text.css?inline";
+import styles from './ok-ui-important-text.css?inline';
 
 @defineElement({
-  tag: "ok-ui-important-text",
-  props: [
-    { variant: { type: String, value: 'primary' } }
-  ],
-  styles: [styles]
+  tag: 'ok-ui-important-text',
+  props: [{ variant: { type: String, value: 'primary' } }],
+  styles: [styles],
 })
 export class OkUiImportantText extends Okalit {
   render() {

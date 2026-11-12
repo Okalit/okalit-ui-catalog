@@ -1,100 +1,135 @@
 :host {
-    display: inline-block;
-    font-family: var(--ok-font, 'DM Sans', sans-serif);
+  display: inline-block;
+  font-family: var(--ok-font, "DM Sans", sans-serif);
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 44px;
-    width: 100%;
-    padding: 0 18px;
-    border: 1px solid transparent;
-    border-radius: var(--ok-radius, 8px);
-    font: 600 14px/1.2 var(--ok-font, 'DM Sans', sans-serif);
-    cursor: pointer;
-    transition: background .16s, border-color .16s, transform .16s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  width: 100%;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: var(--ok-radius, 8px);
+  font: 600 14px / 1.2 var(--ok-font, "DM Sans", sans-serif);
+  cursor: pointer;
+  transition:
+    background 0.16s,
+    border-color 0.16s,
+    transform 0.16s;
 }
 
 button:focus-visible {
-    outline: 2px solid var(--ok-primary-2, #00d4ff);
-    outline-offset: 3px;
+  outline: 2px solid var(--ok-primary-2, #00d4ff);
+  outline-offset: 3px;
 }
 
 button:hover:not(:disabled) {
-    transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 button:disabled {
-    opacity: .55;
-    cursor: not-allowed;
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 
 button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 .primary {
-    background: var(--ok-primary, #7aa2f7);
-    color: var(--ok-primary-contrast, #101e3a);
+  background: var(--ok-primary, #7aa2f7);
+  color: var(--ok-primary-contrast, #101e3a);
 }
 
 .primary:hover:not(:disabled) {
-    background: var(--ok-primary-2, #00d4ff);
+  background: var(--ok-primary-2, #00d4ff);
 }
 
 .secondary {
-    background: var(--ok-surface, #fff);
-    color: var(--ok-text, #1a2840);
-    border-color: var(--ok-border, #cbd5e5);
+  background: var(--ok-surface, #fff);
+  color: var(--ok-text, #1a2840);
+  border-color: var(--ok-border, #cbd5e5);
 }
 
 .secondary:hover:not(:disabled) {
-    border-color: var(--ok-primary, #7aa2f7);
+  border-color: var(--ok-primary, #7aa2f7);
 }
 
 .ghost {
-    background: transparent;
-    color: var(--ok-primary, #7aa2f7);
+  background: transparent;
+  color: var(--ok-primary, #7aa2f7);
 }
 
 .ghost:hover:not(:disabled) {
-    background: var(--ok-surface-alt, #edf2fa);
+  background: var(--ok-surface-alt, #edf2fa);
 }
 
 .danger {
-    background: var(--ok-danger, #c53b54);
-    color: var(--ok-surface, #fff);
+  background: var(--ok-danger, #c53b54);
+  color: var(--ok-surface, #fff);
 }
 
 .danger:hover:not(:disabled) {
-    opacity: .85;
+  opacity: 0.85;
 }
 
 .sm {
-    min-height: 36px;
-    padding: 0 13px;
-    font-size: 12px;
+  min-height: 36px;
+  padding: 0 13px;
+  font-size: 12px;
 }
 
 .lg {
-    min-height: 52px;
-    padding: 0 23px;
-    font-size: 16px;
+  min-height: 52px;
+  padding: 0 23px;
+  font-size: 16px;
+}
+
+button.icon-only {
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+  padding: 0;
+  border-radius: 4px;
+}
+
+button.icon-only.secondary {
+  background: var(--ok-surface);
+  border-color: var(--ok-border);
+}
+
+button.icon-only.secondary:hover:not(:disabled) {
+  background: var(--ok-surface-alt);
+}
+
+button.icon-only.danger {
+  background: transparent;
+  color: var(--ok-danger);
+  border-color: transparent;
+}
+
+button.icon-only.danger:hover:not(:disabled) {
+  background: var(--ok-surface-alt);
+}
+
+button.up ::slotted(ok-ui-icon),
+button.redo ::slotted(ok-ui-icon) {
+  transform: rotate(180deg);
 }
 
 ::slotted(*) {
-    flex: none;
+  flex: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-    button {
-        transition: none;
-    }
+  button {
+    transition: none;
+  }
 }

@@ -1,11 +1,15 @@
-import { defineElement, html, Okalit } from '@okalit/core';
+import { defineElement, html, Okalit, t } from '@okalit/core';
 import styles from './ok-ui-toast.css?inline';
 
-@defineElement({ tag: 'ok-ui-toast', styles: [styles], props: [
-  { open: { type: Boolean, value: false } },
-  { tone: { type: String, value: 'info' } },
-  { duration: { type: Number, value: 4500 } },
-] })
+@defineElement({
+  tag: 'ok-ui-toast',
+  styles: [styles],
+  props: [
+    { open: { type: Boolean, value: false } },
+    { tone: { type: String, value: 'info' } },
+    { duration: { type: Number, value: 4500 } },
+  ],
+})
 export class OkUiToast extends Okalit {
   onInit() {
     this.schedule();
@@ -35,6 +39,6 @@ export class OkUiToast extends Okalit {
   render() {
     if (!this.open.value) return html``;
     const tone = ['info', 'success', 'danger'].includes(this.tone.value) ? this.tone.value : 'info';
-    return html`<div class="toast ${tone}" role="${tone === 'danger' ? 'alert' : 'status'}"><span><slot></slot></span><button type="button" aria-label="Cerrar notificacion" @click=${() => this.close()}>×</button></div>`;
+    return html`<div class="toast ${tone}" role="${tone === 'danger' ? 'alert' : 'status'}"><span><slot></slot></span><button type="button" aria-label=${t('catalog.closeNotice')} @click=${() => this.close()}>×</button></div>`;
   }
 }

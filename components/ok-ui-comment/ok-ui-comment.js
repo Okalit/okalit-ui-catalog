@@ -1,13 +1,17 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-comment.css?inline';
 
-@defineElement({ tag: 'ok-ui-comment', styles: [styles], props: [
-  { author: { type: String, value: 'Sam' } },
-  { text: { type: String, value: '' } },
-  { time: { type: String, value: 'Ahora' } },
-  { likes: { type: Number, value: 0 } },
-  { liked: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-comment',
+  styles: [styles],
+  props: [
+    { author: { type: String, value: 'Sam' } },
+    { text: { type: String, value: '' } },
+    { time: { type: String, value: 'Ahora' } },
+    { likes: { type: Number, value: 0 } },
+    { liked: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiComment extends Okalit {
   like() {
     this.liked.value = !this.liked.value;

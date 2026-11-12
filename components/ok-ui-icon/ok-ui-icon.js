@@ -32,18 +32,30 @@ const icons = {
   calendar: svg`<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/>`,
   close: svg`<path d="M18 6 6 18M6 6l12 12"/>`,
   chevronDown: svg`<path d="m6 9 6 6 6-6"/>`,
+  plus: svg`<path d="M12 5v14M5 12h14"/>`,
+  play: svg`<path d="m8 5 12 7-12 7z"/>`,
+  pause: svg`<path d="M8 5v14M16 5v14"/>`,
+  maximize: svg`<path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"/>`,
+  restart: svg`<path d="M3 10a9 9 0 1 1 2.7 8.4M3 4v6h6"/>`,
+  squares: svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>`,
 };
 
-@defineElement({ tag: 'ok-ui-icon', styles: [styles], props: [
-  { name: { type: String, value: 'home' } },
-  { size: { type: Number, value: 20 } },
-  { tone: { type: String, value: 'text' } },
-  { color: { type: String, value: '' } },
-  { label: { type: String, value: '' } },
-] })
+@defineElement({
+  tag: 'ok-ui-icon',
+  styles: [styles],
+  props: [
+    { name: { type: String, value: 'home' } },
+    { size: { type: Number, value: 20 } },
+    { tone: { type: String, value: 'text' } },
+    { color: { type: String, value: '' } },
+    { label: { type: String, value: '' } },
+  ],
+})
 export class OkUiIcon extends Okalit {
   render() {
-    const size = Number.isFinite(this.size.value) ? Math.max(12, Math.min(this.size.value, 64)) : 20;
+    const size = Number.isFinite(this.size.value)
+      ? Math.max(12, Math.min(this.size.value, 64))
+      : 20;
     const color = this.color.value || this.tone.value;
     const tone = ['primary', 'secondary', 'muted', 'danger'].includes(color) ? color : 'text';
     return html`<svg class="${tone}" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="${this.label.value ? 'img' : undefined}" aria-label="${this.label.value || undefined}" aria-hidden="${this.label.value ? undefined : 'true'}">${icons[this.name.value] || icons.info}</svg>`;

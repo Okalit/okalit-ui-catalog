@@ -1,16 +1,20 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-file-upload.css?inline';
 
-@defineElement({ tag: 'ok-ui-file-upload', styles: [styles], props: [
-  { name: { type: String, value: '' } },
-  { label: { type: String, value: 'Adjuntar archivo' } },
-  { accept: { type: String, value: '' } },
-  { capture: { type: String, value: '' } },
-  { multiple: { type: Boolean, value: false } },
-  { required: { type: Boolean, value: false } },
-  { disabled: { type: Boolean, value: false } },
-  { maxSize: { type: Number, value: 0 } },
-] })
+@defineElement({
+  tag: 'ok-ui-file-upload',
+  styles: [styles],
+  props: [
+    { name: { type: String, value: '' } },
+    { label: { type: String, value: 'Adjuntar archivo' } },
+    { accept: { type: String, value: '' } },
+    { capture: { type: String, value: '' } },
+    { multiple: { type: Boolean, value: false } },
+    { required: { type: Boolean, value: false } },
+    { disabled: { type: Boolean, value: false } },
+    { maxSize: { type: Number, value: 0 } },
+  ],
+})
 export class OkUiFileUpload extends Okalit {
   static formAssociated = true;
 
@@ -31,7 +35,10 @@ export class OkUiFileUpload extends Okalit {
 
   updateFormValue() {
     const missing = this.required.value && this._files.length === 0;
-    this._internals.setValidity(this._error ? { customError: true } : missing ? { valueMissing: true } : {}, this._error || (missing ? 'Selecciona un archivo' : ''));
+    this._internals.setValidity(
+      this._error ? { customError: true } : missing ? { valueMissing: true } : {},
+      this._error || (missing ? 'Selecciona un archivo' : ''),
+    );
     if (!this._files.length || this._error) return this._internals.setFormValue(null);
     if (!this.multiple.value) return this._internals.setFormValue(this._files[0]);
     const data = new FormData();
@@ -41,11 +48,15 @@ export class OkUiFileUpload extends Okalit {
 
   changed(event) {
     this._files = Array.from(event.target.files || []);
-    const tooLarge = this.maxSize.value > 0 && this._files.some((file) => file.size > this.maxSize.value);
+    const tooLarge =
+      this.maxSize.value > 0 && this._files.some((file) => file.size > this.maxSize.value);
     this._error = tooLarge ? 'El archivo supera el tamano permitido' : '';
     this.updateFormValue();
     this.requestUpdate();
-    this.output(tooLarge ? 'ui-invalid' : 'ui-change', tooLarge ? { reason: 'size' } : { name: this.name.value, files: this._files });
+    this.output(
+      tooLarge ? 'ui-invalid' : 'ui-change',
+      tooLarge ? { reason: 'size' } : { name: this.name.value, files: this._files },
+    );
   }
 
   formResetCallback() {

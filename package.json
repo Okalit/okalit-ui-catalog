@@ -1,6 +1,6 @@
 {
   "name": "okalit-ui-catalog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "description": "A themeable, mobile-first Okalit component catalog",
@@ -13,15 +13,14 @@
     "@codemirror/lang-javascript": "^6.2.5",
     "@codemirror/lang-json": "^6.0.2",
     "@codemirror/state": "^6.7.6",
-    "@okalit/core": "^0.2.1",
-    "@okalit/demo-components": "^0.1.5",
+    "@okalit/core": "^0.3.0",
+    "@okalit/demo-components": "^0.1.6",
     "@tiptap/core": "^3.32.0",
     "@tiptap/starter-kit": "^3.32.0",
     "codemirror": "^6.0.2",
     "echarts": "^6.1.0",
     "lit": "^3.3.3",
-    "sortablejs": "^1.15.7",
-    "uhtml": "^5.0.9"
+    "sortablejs": "^1.15.7"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",

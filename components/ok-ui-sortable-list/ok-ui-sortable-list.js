@@ -3,12 +3,16 @@ import { keyed } from 'lit/directives/keyed.js';
 import Sortable from 'sortablejs';
 import styles from './ok-ui-sortable-list.css?inline';
 
-@defineElement({ tag: 'ok-ui-sortable-list', styles: [styles], props: [
-  { items: { type: Array, value: [] } },
-  { label: { type: String, value: 'Lista ordenable' } },
-  { itemKey: { type: String, value: 'id' } },
-  { disabled: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-sortable-list',
+  styles: [styles],
+  props: [
+    { items: { type: Array, value: [] } },
+    { label: { type: String, value: 'Lista ordenable' } },
+    { itemKey: { type: String, value: 'id' } },
+    { disabled: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiSortableList extends Okalit {
   constructor() {
     super();
@@ -46,19 +50,38 @@ export class OkUiSortableList extends Okalit {
 
   move(fromIndex, toIndex) {
     const items = [...this.items.value];
-    if (fromIndex < 0 || fromIndex >= items.length || toIndex < 0 || toIndex >= items.length || fromIndex === toIndex) return;
+    if (
+      fromIndex < 0 ||
+      fromIndex >= items.length ||
+      toIndex < 0 ||
+      toIndex >= items.length ||
+      fromIndex === toIndex
+    )
+      return;
     const [item] = items.splice(fromIndex, 1);
     items.splice(toIndex, 0, item);
     this._revision++;
     this.items.value = items;
-    this.output('ui-move', { id: String(item?.[this.itemKey.value] ?? fromIndex), fromIndex, toIndex, items });
+    this.output('ui-move', {
+      id: String(item?.[this.itemKey.value] ?? fromIndex),
+      fromIndex,
+      toIndex,
+      items,
+    });
   }
 
   keydown(event, index) {
     const last = this.items.value.length - 1;
-    const target = event.key === 'ArrowUp' ? Math.max(0, index - 1)
-      : event.key === 'ArrowDown' ? Math.min(last, index + 1)
-        : event.key === 'Home' ? 0 : event.key === 'End' ? last : index;
+    const target =
+      event.key === 'ArrowUp'
+        ? Math.max(0, index - 1)
+        : event.key === 'ArrowDown'
+          ? Math.min(last, index + 1)
+          : event.key === 'Home'
+            ? 0
+            : event.key === 'End'
+              ? last
+              : index;
     if (target === index && !['ArrowUp', 'ArrowDown', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
     if (target === index) return;

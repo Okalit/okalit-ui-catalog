@@ -2,12 +2,14 @@ import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-code-editor.css?inline';
 
 @defineElement({
-  tag: 'ok-ui-code-editor', styles: [styles], props: [
+  tag: 'ok-ui-code-editor',
+  styles: [styles],
+  props: [
     { label: { type: String, value: 'main.js' } },
     { value: { type: String, value: 'const hello = "world";\n' } },
     { language: { type: String, value: 'javascript' } },
     { readonly: { type: Boolean, value: false } },
-  ]
+  ],
 })
 export class OkUiCodeEditor extends Okalit {
   onAfterRender() {
@@ -15,12 +17,16 @@ export class OkUiCodeEditor extends Okalit {
     this._editor.contentDOM.setAttribute('aria-label', this.label.value);
     if (!this._settingValue && this._editor.state.doc.toString() !== this.value.value) {
       this._settingValue = true;
-      this._editor.dispatch({ changes: { from: 0, to: this._editor.state.doc.length, insert: this.value.value } });
+      this._editor.dispatch({
+        changes: { from: 0, to: this._editor.state.doc.length, insert: this.value.value },
+      });
       this._settingValue = false;
     }
     if (this._lastReadonly !== this.readonly.value) {
       this._lastReadonly = this.readonly.value;
-      this._editor.dispatch({ effects: this._editable.reconfigure(this._EditorView.editable.of(!this.readonly.value)) });
+      this._editor.dispatch({
+        effects: this._editable.reconfigure(this._EditorView.editable.of(!this.readonly.value)),
+      });
     }
     if (this._lastLanguage !== this.language.value) {
       this._lastLanguage = this.language.value;
@@ -37,7 +43,9 @@ export class OkUiCodeEditor extends Okalit {
     if (this._loading) return;
     this._loading = (async () => {
       const [{ EditorView, basicSetup }, { Compartment }, syntax] = await Promise.all([
-        import('codemirror'), import('@codemirror/state'), this.extension(),
+        import('codemirror'),
+        import('@codemirror/state'),
+        this.extension(),
       ]);
       if (!this.isConnected) return;
       const container = this.renderRoot.querySelector('.editor');
@@ -47,15 +55,27 @@ export class OkUiCodeEditor extends Okalit {
       this._syntax = new Compartment();
       const theme = EditorView.theme({
         '&': { backgroundColor: 'var(--ok-surface, #fff)', color: 'var(--ok-text, #1a2840)' },
-        '.cm-content': { minHeight: '180px', fontFamily: 'ui-monospace, SFMono-Regular, monospace', fontSize: '13px' },
-        '.cm-gutters': { backgroundColor: 'var(--ok-surface-alt, #edf2fa)', color: 'var(--ok-muted, #56657e)', borderRight: '1px solid var(--ok-border, #cbd5e5)' },
+        '.cm-content': {
+          minHeight: '180px',
+          fontFamily: 'ui-monospace, SFMono-Regular, monospace',
+          fontSize: '13px',
+        },
+        '.cm-gutters': {
+          backgroundColor: 'var(--ok-surface-alt, #edf2fa)',
+          color: 'var(--ok-muted, #56657e)',
+          borderRight: '1px solid var(--ok-border, #cbd5e5)',
+        },
         '.cm-activeLine': { backgroundColor: 'var(--ok-surface-alt, #edf2fa)' },
         '&.cm-focused': { outline: 'none' },
       });
       this._editor = new EditorView({
         doc: this.value.value,
         parent: container,
-        extensions: [basicSetup, this._editable.of(EditorView.editable.of(!this.readonly.value)), this._syntax.of(syntax), theme,
+        extensions: [
+          basicSetup,
+          this._editable.of(EditorView.editable.of(!this.readonly.value)),
+          this._syntax.of(syntax),
+          theme,
           EditorView.updateListener.of((update) => {
             if (!update.docChanged || this._settingValue) return;
             const value = update.state.doc.toString();
@@ -67,14 +87,17 @@ export class OkUiCodeEditor extends Okalit {
       this._lastReadonly = this.readonly.value;
       this._lastLanguage = this.language.value;
       this._editor.contentDOM.setAttribute('aria-label', this.label.value);
-    })().finally(() => { this._loading = null; });
+    })().finally(() => {
+      this._loading = null;
+    });
   }
 
   async updateLanguage() {
     const version = (this._languageVersion || 0) + 1;
     this._languageVersion = version;
     const syntax = await this.extension();
-    if (version === this._languageVersion && this._editor) this._editor.dispatch({ effects: this._syntax.reconfigure(syntax) });
+    if (version === this._languageVersion && this._editor)
+      this._editor.dispatch({ effects: this._syntax.reconfigure(syntax) });
   }
 
   onDestroy() {

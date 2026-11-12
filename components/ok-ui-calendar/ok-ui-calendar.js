@@ -1,15 +1,19 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-calendar.css?inline';
 
-@defineElement({ tag: 'ok-ui-calendar', styles: [styles], props: [
-  { name: { type: String, value: '' } },
-  { label: { type: String, value: 'Date' } },
-  { value: { type: String, value: '' } },
-  { min: { type: String, value: '' } },
-  { max: { type: String, value: '' } },
-  { required: { type: Boolean, value: false } },
-  { disabled: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-calendar',
+  styles: [styles],
+  props: [
+    { name: { type: String, value: '' } },
+    { label: { type: String, value: 'Date' } },
+    { value: { type: String, value: '' } },
+    { min: { type: String, value: '' } },
+    { max: { type: String, value: '' } },
+    { required: { type: Boolean, value: false } },
+    { disabled: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiCalendar extends Okalit {
   static formAssociated = true;
 
@@ -24,7 +28,11 @@ export class OkUiCalendar extends Okalit {
 
   sync(control) {
     this._internals.setFormValue(control.value);
-    this._internals.setValidity(control.validity.valid ? {} : { customError: true }, control.validationMessage, control);
+    this._internals.setValidity(
+      control.validity.valid ? {} : { customError: true },
+      control.validationMessage,
+      control,
+    );
   }
 
   onAfterRender() {
@@ -36,6 +44,12 @@ export class OkUiCalendar extends Okalit {
   }
 
   render() {
-    return html`<label><span>${this.label.value}${this.required.value ? ' *' : ''}</span><input type="date" .value=${this.value.value} min="${this.min.value || undefined}" max="${this.max.value || undefined}" ?required=${this.required.value} ?disabled=${this.disabled.value} @change=${(event) => { this.value.value = event.target.value; this.sync(event.target); this.output('ui-change', { name: this.name.value, value: event.target.value }); }} /></label>`;
+    return html`<label><span>${this.label.value}${this.required.value ? ' *' : ''}</span><input type="date" .value=${this.value.value} min="${this.min.value || undefined}" max="${this.max.value || undefined}" ?required=${this.required.value} ?disabled=${this.disabled.value} @change=${(
+      event,
+    ) => {
+      this.value.value = event.target.value;
+      this.sync(event.target);
+      this.output('ui-change', { name: this.name.value, value: event.target.value });
+    }} /></label>`;
   }
 }

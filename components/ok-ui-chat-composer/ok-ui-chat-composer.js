@@ -1,12 +1,16 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-chat-composer.css?inline';
 
-@defineElement({ tag: 'ok-ui-chat-composer', styles: [styles], props: [
-  { placeholder: { type: String, value: 'Escribe un mensaje...' } },
-  { accept: { type: String, value: 'image/*' } },
-  { maxFiles: { type: Number, value: 4 } },
-  { disabled: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-chat-composer',
+  styles: [styles],
+  props: [
+    { placeholder: { type: String, value: 'Escribe un mensaje...' } },
+    { accept: { type: String, value: 'image/*' } },
+    { maxFiles: { type: Number, value: 4 } },
+    { disabled: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiChatComposer extends Okalit {
   constructor() {
     super();
@@ -46,6 +50,10 @@ export class OkUiChatComposer extends Okalit {
   }
 
   render() {
-    return html`<form @submit=${(event) => this.send(event)}>${this._files.length ? html`<div class="attachments">${this._files.map((file) => html`<span>${file.name}</span>`)}</div>` : ''}<div class="controls"><label class="attach" title="Adjuntar archivo"><input type="file" aria-label="Adjuntar archivo" accept="${this.accept.value || undefined}" multiple ?disabled=${this.disabled.value} @change=${(event) => this.attach(event)} /><span aria-hidden="true">+</span></label><textarea rows="1" aria-label="Mensaje" placeholder="${this.placeholder.value}" .value=${this._draft} ?disabled=${this.disabled.value} @input=${(event) => { this._draft = event.target.value; }} @keydown=${(event) => this.keydown(event)}></textarea><button type="submit" title="Enviar mensaje" aria-label="Enviar mensaje" ?disabled=${this.disabled.value}>↑</button></div></form>`;
+    return html`<form @submit=${(event) => this.send(event)}>${this._files.length ? html`<div class="attachments">${this._files.map((file) => html`<span>${file.name}</span>`)}</div>` : ''}<div class="controls"><label class="attach" title="Adjuntar archivo"><input type="file" aria-label="Adjuntar archivo" accept="${this.accept.value || undefined}" multiple ?disabled=${this.disabled.value} @change=${(event) => this.attach(event)} /><span aria-hidden="true">+</span></label><textarea rows="1" aria-label="Mensaje" placeholder="${this.placeholder.value}" .value=${this._draft} ?disabled=${this.disabled.value} @input=${(
+      event,
+    ) => {
+      this._draft = event.target.value;
+    }} @keydown=${(event) => this.keydown(event)}></textarea><button type="submit" title="Enviar mensaje" aria-label="Enviar mensaje" ?disabled=${this.disabled.value}>↑</button></div></form>`;
   }
 }

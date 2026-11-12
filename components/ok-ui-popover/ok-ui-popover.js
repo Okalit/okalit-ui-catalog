@@ -1,11 +1,15 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-popover.css?inline';
 
-@defineElement({ tag: 'ok-ui-popover', styles: [styles], props: [
-  { label: { type: String, value: 'Opciones' } },
-  { placement: { type: String, value: 'bottom' } },
-  { open: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-popover',
+  styles: [styles],
+  props: [
+    { label: { type: String, value: 'Opciones' } },
+    { placement: { type: String, value: 'bottom' } },
+    { open: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiPopover extends Okalit {
   constructor() {
     super();
@@ -45,6 +49,8 @@ export class OkUiPopover extends Okalit {
 
   render() {
     const placement = this.placement.value === 'top' ? 'top' : 'bottom';
-    return html`<div class="anchor ${placement}" @keydown=${(event) => this.keydown(event)}><button type="button" aria-haspopup="true" aria-expanded="${this.open.value}" aria-controls="popover-panel" @click=${() => { this.open.value = !this.open.value; }}><slot name="trigger">${this.label.value}</slot></button><div id="popover-panel" class="panel" role="region" aria-label="${this.label.value}" ?hidden=${!this.open.value}><slot></slot></div></div>`;
+    return html`<div class="anchor ${placement}" @keydown=${(event) => this.keydown(event)}><button type="button" aria-haspopup="true" aria-expanded="${this.open.value}" aria-controls="popover-panel" @click=${() => {
+      this.open.value = !this.open.value;
+    }}><slot name="trigger">${this.label.value}</slot></button><div id="popover-panel" class="panel" role="region" aria-label="${this.label.value}" ?hidden=${!this.open.value}><slot></slot></div></div>`;
   }
 }

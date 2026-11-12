@@ -1,10 +1,14 @@
-import { defineElement, html, Okalit } from '@okalit/core';
+import { defineElement, html, Okalit, t } from '@okalit/core';
 import styles from './ok-ui-tabs.css?inline';
 
-@defineElement({ tag: 'ok-ui-tabs', styles: [styles], props: [
-  { options: { type: Array, value: ['Chat', 'Posts', 'Files'] } },
-  { selected: { type: String, value: 'Chat' } },
-] })
+@defineElement({
+  tag: 'ok-ui-tabs',
+  styles: [styles],
+  props: [
+    { options: { type: Array, value: ['Chat', 'Posts', 'Files'] } },
+    { selected: { type: String, value: 'Chat' } },
+  ],
+})
 export class OkUiTabs extends Okalit {
   select(option) {
     this.selected.value = option;
@@ -21,6 +25,6 @@ export class OkUiTabs extends Okalit {
   }
 
   render() {
-    return html`<div role="tablist" aria-label="Views">${this.options.value.map((option, index) => html`<button type="button" role="tab" aria-selected="${option === this.selected.value}" tabindex="${option === this.selected.value ? 0 : -1}" @click=${() => this.select(option)} @keydown=${(event) => this.keydown(event, index)}>${option}</button>`)}</div>`;
+    return html`<div role="tablist" aria-label=${t('common.views')}>${this.options.value.map((option, index) => html`<button type="button" role="tab" aria-selected="${option === this.selected.value}" tabindex="${option === this.selected.value ? 0 : -1}" @click=${() => this.select(option)} @keydown=${(event) => this.keydown(event, index)}>${option}</button>`)}</div>`;
   }
 }

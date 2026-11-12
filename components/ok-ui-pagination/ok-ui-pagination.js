@@ -1,18 +1,25 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-pagination.css?inline';
 
-@defineElement({ tag: 'ok-ui-pagination', styles: [styles], props: [
-  { total: { type: Number, value: 0 } },
-  { page: { type: Number, value: 1 } },
-  { pageSize: { type: Number, value: 10 } },
-  { maxPages: { type: Number, value: 5 } },
-  { label: { type: String, value: 'Paginacion' } },
-  { disabled: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-pagination',
+  styles: [styles],
+  props: [
+    { total: { type: Number, value: 0 } },
+    { page: { type: Number, value: 1 } },
+    { pageSize: { type: Number, value: 10 } },
+    { maxPages: { type: Number, value: 5 } },
+    { label: { type: String, value: 'Paginacion' } },
+    { disabled: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiPagination extends Okalit {
   select(page) {
     const pageSize = Math.max(1, Number(this.pageSize.value) || 10);
-    const totalPages = Math.max(1, Math.ceil(Math.max(0, Number(this.total.value) || 0) / pageSize));
+    const totalPages = Math.max(
+      1,
+      Math.ceil(Math.max(0, Number(this.total.value) || 0) / pageSize),
+    );
     const nextPage = Math.max(1, Math.min(totalPages, page));
     if (nextPage === this.page.value || this.disabled.value) return;
     this.page.value = nextPage;

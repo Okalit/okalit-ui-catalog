@@ -1,14 +1,18 @@
 import { defineElement, html, Okalit } from '@okalit/core';
 import styles from './ok-ui-date-range.css?inline';
 
-@defineElement({ tag: 'ok-ui-date-range', styles: [styles], props: [
-  { name: { type: String, value: 'period' } },
-  { label: { type: String, value: 'Periodo' } },
-  { start: { type: String, value: '' } },
-  { end: { type: String, value: '' } },
-  { required: { type: Boolean, value: false } },
-  { disabled: { type: Boolean, value: false } },
-] })
+@defineElement({
+  tag: 'ok-ui-date-range',
+  styles: [styles],
+  props: [
+    { name: { type: String, value: 'period' } },
+    { label: { type: String, value: 'Periodo' } },
+    { start: { type: String, value: '' } },
+    { end: { type: String, value: '' } },
+    { required: { type: Boolean, value: false } },
+    { disabled: { type: Boolean, value: false } },
+  ],
+})
 export class OkUiDateRange extends Okalit {
   static formAssociated = true;
 
@@ -26,12 +30,23 @@ export class OkUiDateRange extends Okalit {
   }
 
   sync() {
-    const missing = this.required.value && !this.disabled.value && (!this.start.value || !this.end.value);
+    const missing =
+      this.required.value && !this.disabled.value && (!this.start.value || !this.end.value);
     const reversed = this.start.value && this.end.value && this.start.value > this.end.value;
-    this._internals.setValidity(missing ? { valueMissing: true } : reversed ? { rangeUnderflow: true } : {}, missing ? 'Selecciona ambas fechas' : reversed ? 'La fecha final debe ser posterior a la inicial' : '', this.renderRoot.querySelectorAll('input')[1]);
+    this._internals.setValidity(
+      missing ? { valueMissing: true } : reversed ? { rangeUnderflow: true } : {},
+      missing
+        ? 'Selecciona ambas fechas'
+        : reversed
+          ? 'La fecha final debe ser posterior a la inicial'
+          : '',
+      this.renderRoot.querySelectorAll('input')[1],
+    );
     const data = new FormData();
-    if (!this.disabled.value && this.start.value) data.append(`${this.name.value}-start`, this.start.value);
-    if (!this.disabled.value && this.end.value) data.append(`${this.name.value}-end`, this.end.value);
+    if (!this.disabled.value && this.start.value)
+      data.append(`${this.name.value}-start`, this.start.value);
+    if (!this.disabled.value && this.end.value)
+      data.append(`${this.name.value}-end`, this.end.value);
     this._internals.setFormValue(data);
   }
 
