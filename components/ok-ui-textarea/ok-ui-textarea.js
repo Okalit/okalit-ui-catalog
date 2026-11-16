@@ -4,15 +4,15 @@ import styles from './ok-ui-textarea.css?inline';
 @defineElement({
   tag: 'ok-ui-textarea',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { label: { type: String, value: 'Message' } },
-    { value: { type: String, value: '' } },
-    { placeholder: { type: String, value: '' } },
-    { rows: { type: Number, value: 4 } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    label: { type: String, value: 'Message' },
+    value: { type: String, value: '' },
+    placeholder: { type: String, value: '' },
+    rows: { type: Number, value: 4 },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiTextarea extends Okalit {
   static formAssociated = true;

@@ -5,11 +5,11 @@ import styles from './ok-ui-switch.css?inline';
 @defineElement({
   tag: 'ok-ui-switch',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { checked: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    checked: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiSwitch extends Okalit {
   static formAssociated = true;

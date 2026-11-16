@@ -4,13 +4,13 @@ import styles from './ok-ui-checkbox.css?inline';
 @defineElement({
   tag: 'ok-ui-checkbox',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { value: { type: String, value: 'on' } },
-    { checked: { type: Boolean, value: false } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    value: { type: String, value: 'on' },
+    checked: { type: Boolean, value: false },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiCheckbox extends Okalit {
   static formAssociated = true;

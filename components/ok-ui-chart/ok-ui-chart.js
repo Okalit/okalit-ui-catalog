@@ -4,12 +4,12 @@ import styles from './ok-ui-chart.css?inline';
 @defineElement({
   tag: 'ok-ui-chart',
   styles: [styles],
-  props: [
-    { label: { type: String, value: 'Actividad' } },
-    { type: { type: String, value: 'bar' } },
-    { data: { type: Array, value: [] } },
-    { height: { type: Number, value: 260 } },
-  ],
+  props: {
+    label: { type: String, value: 'Actividad' },
+    type: { type: String, value: 'bar' },
+    data: { type: Array, value: [] },
+    height: { type: Number, value: 260 },
+  },
 })
 export class OkUiChart extends Okalit {
   onAfterRender() {

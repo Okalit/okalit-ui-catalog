@@ -4,15 +4,15 @@ import styles from './ok-ui-combobox.css?inline';
 @defineElement({
   tag: 'ok-ui-combobox',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { label: { type: String, value: 'Buscar opcion' } },
-    { placeholder: { type: String, value: 'Seleccionar...' } },
-    { options: { type: Array, value: [] } },
-    { value: { type: String, value: '' } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    label: { type: String, value: 'Buscar opcion' },
+    placeholder: { type: String, value: 'Seleccionar...' },
+    options: { type: Array, value: [] },
+    value: { type: String, value: '' },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiCombobox extends Okalit {
   static formAssociated = true;

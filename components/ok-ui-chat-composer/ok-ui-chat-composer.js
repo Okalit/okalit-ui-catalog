@@ -4,12 +4,12 @@ import styles from './ok-ui-chat-composer.css?inline';
 @defineElement({
   tag: 'ok-ui-chat-composer',
   styles: [styles],
-  props: [
-    { placeholder: { type: String, value: 'Escribe un mensaje...' } },
-    { accept: { type: String, value: 'image/*' } },
-    { maxFiles: { type: Number, value: 4 } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    placeholder: { type: String, value: 'Escribe un mensaje...' },
+    accept: { type: String, value: 'image/*' },
+    maxFiles: { type: Number, value: 4 },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiChatComposer extends Okalit {
   constructor() {

@@ -4,11 +4,11 @@ import styles from './ok-ui-conversation-list.css?inline';
 @defineElement({
   tag: 'ok-ui-conversation-list',
   styles: [styles],
-  props: [
-    { conversations: { type: Array, value: [] } },
-    { active: { type: String, value: '' } },
-    { label: { type: String, value: 'Conversaciones' } },
-  ],
+  props: {
+    conversations: { type: Array, value: [] },
+    active: { type: String, value: '' },
+    label: { type: String, value: 'Conversaciones' },
+  },
 })
 export class OkUiConversationList extends Okalit {
   choose(id) {

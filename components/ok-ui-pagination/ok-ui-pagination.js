@@ -4,14 +4,14 @@ import styles from './ok-ui-pagination.css?inline';
 @defineElement({
   tag: 'ok-ui-pagination',
   styles: [styles],
-  props: [
-    { total: { type: Number, value: 0 } },
-    { page: { type: Number, value: 1 } },
-    { pageSize: { type: Number, value: 10 } },
-    { maxPages: { type: Number, value: 5 } },
-    { label: { type: String, value: 'Paginacion' } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    total: { type: Number, value: 0 },
+    page: { type: Number, value: 1 },
+    pageSize: { type: Number, value: 10 },
+    maxPages: { type: Number, value: 5 },
+    label: { type: String, value: 'Paginacion' },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiPagination extends Okalit {
   select(page) {

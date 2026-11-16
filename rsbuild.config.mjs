@@ -1,11 +1,43 @@
+import { createRequire } from 'node:module';
 import { defineConfig } from '@rsbuild/core';
 import { pluginBabel } from '@rsbuild/plugin-babel';
+import { pluginSass } from '@rsbuild/plugin-sass';
+
+const require = createRequire(import.meta.url);
 
 export default defineConfig({
-  plugins: [pluginBabel({
-    include: /\.js$/,
-    babelLoaderOptions: { plugins: [['@babel/plugin-proposal-decorators', { version: '2023-05' }]] },
-  })],
-  source: { entry: { index: './demo.js' } },
-  html: { template: './index.html' },
+  plugins: [
+    pluginSass(),
+    pluginBabel({
+      include: /\.(j|t)s$/,
+      babelLoaderOptions: {
+        plugins: [['@babel/plugin-proposal-decorators', { version: '2023-05' }]],
+      },
+    }),
+  ],
+  dev: {
+    // Lazy compilation rompe los chunks async de echarts/zrender en dev ("factory is undefined").
+    lazyCompilation: false,
+  },
+  html: {
+    template: './index.html',
+  },
+  source: {
+    entry: {
+      index: './demo.js',
+    },
+  },
+  tools: {
+    rspack: {
+      module: {
+        rules: [
+          {
+            test: /\.ok$/,
+            type: 'javascript/auto',
+            use: [{ loader: require.resolve('@okalit/engine/loader') }],
+          },
+        ],
+      },
+    },
+  },
 });

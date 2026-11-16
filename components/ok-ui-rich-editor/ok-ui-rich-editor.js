@@ -4,11 +4,11 @@ import styles from './ok-ui-rich-editor.css?inline';
 @defineElement({
   tag: 'ok-ui-rich-editor',
   styles: [styles],
-  props: [
-    { value: { type: String, value: '<p>Escribe algo interesante...</p>' } },
-    { label: { type: String, value: 'Contenido' } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    value: { type: String, value: '<p>Escribe algo interesante...</p>' },
+    label: { type: String, value: 'Contenido' },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiRichEditor extends Okalit {
   onAfterRender() {

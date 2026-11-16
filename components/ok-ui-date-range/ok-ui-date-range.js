@@ -4,14 +4,14 @@ import styles from './ok-ui-date-range.css?inline';
 @defineElement({
   tag: 'ok-ui-date-range',
   styles: [styles],
-  props: [
-    { name: { type: String, value: 'period' } },
-    { label: { type: String, value: 'Periodo' } },
-    { start: { type: String, value: '' } },
-    { end: { type: String, value: '' } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: 'period' },
+    label: { type: String, value: 'Periodo' },
+    start: { type: String, value: '' },
+    end: { type: String, value: '' },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiDateRange extends Okalit {
   static formAssociated = true;

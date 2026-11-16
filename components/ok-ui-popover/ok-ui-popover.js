@@ -4,11 +4,11 @@ import styles from './ok-ui-popover.css?inline';
 @defineElement({
   tag: 'ok-ui-popover',
   styles: [styles],
-  props: [
-    { label: { type: String, value: 'Opciones' } },
-    { placement: { type: String, value: 'bottom' } },
-    { open: { type: Boolean, value: false } },
-  ],
+  props: {
+    label: { type: String, value: 'Opciones' },
+    placement: { type: String, value: 'bottom' },
+    open: { type: Boolean, value: false },
+  },
 })
 export class OkUiPopover extends Okalit {
   constructor() {

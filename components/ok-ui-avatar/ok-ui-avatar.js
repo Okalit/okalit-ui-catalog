@@ -4,11 +4,11 @@ import styles from './ok-ui-avatar.css?inline';
 @defineElement({
   tag: 'ok-ui-avatar',
   styles: [styles],
-  props: [
-    { name: { type: String, value: 'User' } },
-    { src: { type: String, value: '' } },
-    { size: { type: String, value: 'md' } },
-  ],
+  props: {
+    name: { type: String, value: 'User' },
+    src: { type: String, value: '' },
+    size: { type: String, value: 'md' },
+  },
 })
 export class OkUiAvatar extends Okalit {
   constructor() {

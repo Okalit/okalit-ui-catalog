@@ -4,7 +4,7 @@ import styles from './ok-ui-dialog.css?inline';
 @defineElement({
   tag: 'ok-ui-dialog',
   styles: [styles],
-  props: [{ open: { type: Boolean, value: false } }, { title: { type: String, value: '' } }],
+  props: { open: { type: Boolean, value: false }, title: { type: String, value: '' } },
 })
 export class OkUiDialog extends Okalit {
   onAfterRender() {

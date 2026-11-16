@@ -6,12 +6,12 @@ import styles from './ok-ui-sortable-list.css?inline';
 @defineElement({
   tag: 'ok-ui-sortable-list',
   styles: [styles],
-  props: [
-    { items: { type: Array, value: [] } },
-    { label: { type: String, value: 'Lista ordenable' } },
-    { itemKey: { type: String, value: 'id' } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    items: { type: Array, value: [] },
+    label: { type: String, value: 'Lista ordenable' },
+    itemKey: { type: String, value: 'id' },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiSortableList extends Okalit {
   constructor() {

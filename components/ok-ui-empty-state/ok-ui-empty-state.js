@@ -4,10 +4,10 @@ import styles from './ok-ui-empty-state.css?inline';
 @defineElement({
   tag: 'ok-ui-empty-state',
   styles: [styles],
-  props: [
-    { title: { type: String, value: 'Sin resultados' } },
-    { description: { type: String, value: 'Prueba con otra busqueda.' } },
-  ],
+  props: {
+    title: { type: String, value: 'Sin resultados' },
+    description: { type: String, value: 'Prueba con otra busqueda.' },
+  },
 })
 export class OkUiEmptyState extends Okalit {
   render() {

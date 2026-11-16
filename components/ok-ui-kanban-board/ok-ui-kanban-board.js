@@ -8,11 +8,11 @@ let boardCounter = 0;
 @defineElement({
   tag: 'ok-ui-kanban-board',
   styles: [styles],
-  props: [
-    { columns: { type: Array, value: [] } },
-    { label: { type: String, value: 'Tablero de tareas' } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    columns: { type: Array, value: [] },
+    label: { type: String, value: 'Tablero de tareas' },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiKanbanBoard extends Okalit {
   constructor() {

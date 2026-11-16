@@ -4,17 +4,17 @@ import styles from './ok-ui-media-preview.css?inline';
 @defineElement({
   tag: 'ok-ui-media-preview',
   styles: [styles],
-  props: [
-    { src: { type: String, value: '' } },
-    { type: { type: String, value: 'image' } },
-    { alt: { type: String, value: '' } },
-    { poster: { type: String, value: '' } },
-    { caption: { type: String, value: '' } },
-    { ratio: { type: String, value: '16/9' } },
-    { controls: { type: Boolean, value: true } },
-    { muted: { type: Boolean, value: false } },
-    { loop: { type: Boolean, value: false } },
-  ],
+  props: {
+    src: { type: String, value: '' },
+    type: { type: String, value: 'image' },
+    alt: { type: String, value: '' },
+    poster: { type: String, value: '' },
+    caption: { type: String, value: '' },
+    ratio: { type: String, value: '16/9' },
+    controls: { type: Boolean, value: true },
+    muted: { type: Boolean, value: false },
+    loop: { type: Boolean, value: false },
+  },
 })
 export class OkUiMediaPreview extends Okalit {
   render() {

@@ -5,17 +5,17 @@ import styles from './ok-ui-button.css?inline';
 @defineElement({
   tag: 'ok-ui-button',
   styles: [styles],
-  props: [
-    { variant: { type: String, value: 'primary' } },
-    { size: { type: String, value: 'md' } },
-    { disabled: { type: Boolean, value: false } },
-    { loading: { type: Boolean, value: false } },
-    { toggle: { type: Boolean, value: false } },
-    { pressed: { type: Boolean, value: false } },
-    { iconOnly: { type: Boolean, value: false } },
-    { ariaLabel: { type: String, value: '' } },
-    { className: { type: String, value: '' } },
-  ],
+  props: {
+    variant: { type: String, value: 'primary' },
+    size: { type: String, value: 'md' },
+    disabled: { type: Boolean, value: false },
+    loading: { type: Boolean, value: false },
+    toggle: { type: Boolean, value: false },
+    pressed: { type: Boolean, value: false },
+    iconOnly: { type: Boolean, value: false },
+    ariaLabel: { type: String, value: '' },
+    className: { type: String, value: '' },
+  },
 })
 export class OkUiButton extends Okalit {
   click() {

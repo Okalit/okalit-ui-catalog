@@ -6,14 +6,14 @@ const collator = new Intl.Collator(undefined, { numeric: true, sensitivity: 'bas
 @defineElement({
   tag: 'ok-ui-data-grid',
   styles: [styles],
-  props: [
-    { columns: { type: Array, value: [] } },
-    { rows: { type: Array, value: [] } },
-    { label: { type: String, value: 'Registros' } },
-    { rowKey: { type: String, value: 'id' } },
-    { pageSize: { type: Number, value: 5 } },
-    { selectable: { type: Boolean, value: true } },
-  ],
+  props: {
+    columns: { type: Array, value: [] },
+    rows: { type: Array, value: [] },
+    label: { type: String, value: 'Registros' },
+    rowKey: { type: String, value: 'id' },
+    pageSize: { type: Number, value: 5 },
+    selectable: { type: Boolean, value: true },
+  },
 })
 export class OkUiDataGrid extends Okalit {
   constructor() {

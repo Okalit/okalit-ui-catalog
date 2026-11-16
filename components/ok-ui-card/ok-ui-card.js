@@ -4,7 +4,7 @@ import styles from './ok-ui-card.css?inline';
 @defineElement({
   tag: 'ok-ui-card',
   styles: [styles],
-  props: [{ variant: { type: String, value: 'bordered' } }],
+  props: { variant: { type: String, value: 'bordered' } },
 })
 export class OkUiCard extends Okalit {
   render() {

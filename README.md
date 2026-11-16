@@ -61,7 +61,7 @@ The optional `tokens.css` provides full light/dark presets. Copy or import it in
 
 | Group | Tags |
 | --- | --- |
-| Actions | `ok-ui-button`, `ok-ui-link`, `ok-ui-icon` |
+| Actions | `ok-ui-button`, `ok-ui-toggle-button`, `ok-ui-link`, `ok-ui-icon` |
 | Inputs | `ok-ui-input`, `ok-ui-textarea`, `ok-ui-checkbox`, `ok-ui-radio-group`, `ok-ui-select`, `ok-ui-calendar`, `ok-ui-switch`, `ok-ui-file-upload` |
 | Content | `ok-ui-card`, `ok-ui-badge`, `ok-ui-avatar`, `ok-ui-chat-bubble`, `ok-ui-empty-state`, `ok-ui-loading` |
 | Navigation and overlays | `ok-ui-tabs`, `ok-ui-dialog`, `ok-ui-alert`, `ok-ui-toast` |

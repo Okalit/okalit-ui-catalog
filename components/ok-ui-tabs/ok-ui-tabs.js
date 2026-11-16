@@ -4,10 +4,10 @@ import styles from './ok-ui-tabs.css?inline';
 @defineElement({
   tag: 'ok-ui-tabs',
   styles: [styles],
-  props: [
-    { options: { type: Array, value: ['Chat', 'Posts', 'Files'] } },
-    { selected: { type: String, value: 'Chat' } },
-  ],
+  props: {
+    options: { type: Array, value: ['Chat', 'Posts', 'Files'] },
+    selected: { type: String, value: 'Chat' },
+  },
 })
 export class OkUiTabs extends Okalit {
   select(option) {

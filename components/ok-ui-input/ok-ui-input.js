@@ -4,17 +4,17 @@ import styles from './ok-ui-input.css?inline';
 @defineElement({
   tag: 'ok-ui-input',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { label: { type: String, value: 'Label' } },
-    { type: { type: String, value: 'text' } },
-    { value: { type: String, value: '' } },
-    { placeholder: { type: String, value: '' } },
-    { hint: { type: String, value: '' } },
-    { autocomplete: { type: String, value: '' } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    label: { type: String, value: 'Label' },
+    type: { type: String, value: 'text' },
+    value: { type: String, value: '' },
+    placeholder: { type: String, value: '' },
+    hint: { type: String, value: '' },
+    autocomplete: { type: String, value: '' },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiInput extends Okalit {
   static formAssociated = true;

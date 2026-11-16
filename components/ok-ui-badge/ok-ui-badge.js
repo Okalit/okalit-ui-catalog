@@ -4,7 +4,7 @@ import styles from './ok-ui-badge.css?inline';
 @defineElement({
   tag: 'ok-ui-badge',
   styles: [styles],
-  props: [{ tone: { type: String, value: 'neutral' } }],
+  props: { tone: { type: String, value: 'neutral' } },
 })
 export class OkUiBadge extends Okalit {
   render() {

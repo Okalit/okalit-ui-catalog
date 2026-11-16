@@ -38,18 +38,20 @@ const icons = {
   maximize: svg`<path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"/>`,
   restart: svg`<path d="M3 10a9 9 0 1 1 2.7 8.4M3 4v6h6"/>`,
   squares: svg`<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>`,
+  coin: svg`<circle cx="12" cy="12" r="10"/><path d="M16 8.5c-.8-1-2.2-1.5-4-1.5-2.2 0-4 1.2-4 3s1.8 2.5 4 3 4 1.2 4 3-1.8 3-4 3c-1.8 0-3.2-.5-4-1.5"/><path d="M12 5v14"/>`,
+  textToSpeech: svg`<circle cx="8" cy="7" r="3"/><path d="M2 20v-2a6 6 0 0 1 12 0v2"/><path d="M15 8c1.5 1 1.5 3 0 4"/><path d="M18 5c3 3 3 7 0 10"/>`,
 };
 
 @defineElement({
   tag: 'ok-ui-icon',
   styles: [styles],
-  props: [
-    { name: { type: String, value: 'home' } },
-    { size: { type: Number, value: 20 } },
-    { tone: { type: String, value: 'text' } },
-    { color: { type: String, value: '' } },
-    { label: { type: String, value: '' } },
-  ],
+  props: {
+    name: { type: String, value: 'home' },
+    size: { type: Number, value: 20 },
+    tone: { type: String, value: 'text' },
+    color: { type: String, value: '' },
+    label: { type: String, value: '' },
+  },
 })
 export class OkUiIcon extends Okalit {
   render() {

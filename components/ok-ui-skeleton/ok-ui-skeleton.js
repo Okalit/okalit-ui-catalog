@@ -4,13 +4,13 @@ import styles from './ok-ui-skeleton.css?inline';
 @defineElement({
   tag: 'ok-ui-skeleton',
   styles: [styles],
-  props: [
-    { variant: { type: String, value: 'text' } },
-    { lines: { type: Number, value: 3 } },
-    { width: { type: Number, value: 0 } },
-    { height: { type: Number, value: 120 } },
-    { label: { type: String, value: 'Cargando contenido' } },
-  ],
+  props: {
+    variant: { type: String, value: 'text' },
+    lines: { type: Number, value: 3 },
+    width: { type: Number, value: 0 },
+    height: { type: Number, value: 120 },
+    label: { type: String, value: 'Cargando contenido' },
+  },
 })
 export class OkUiSkeleton extends Okalit {
   render() {

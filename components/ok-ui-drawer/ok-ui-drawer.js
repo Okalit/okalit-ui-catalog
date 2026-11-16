@@ -4,11 +4,11 @@ import styles from './ok-ui-drawer.css?inline';
 @defineElement({
   tag: 'ok-ui-drawer',
   styles: [styles],
-  props: [
-    { open: { type: Boolean, value: false } },
-    { title: { type: String, value: 'Filtros' } },
-    { side: { type: String, value: 'right' } },
-  ],
+  props: {
+    open: { type: Boolean, value: false },
+    title: { type: String, value: 'Filtros' },
+    side: { type: String, value: 'right' },
+  },
 })
 export class OkUiDrawer extends Okalit {
   onAfterRender() {

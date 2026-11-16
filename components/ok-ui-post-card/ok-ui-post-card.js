@@ -4,16 +4,16 @@ import styles from './ok-ui-post-card.css?inline';
 @defineElement({
   tag: 'ok-ui-post-card',
   styles: [styles],
-  props: [
-    { author: { type: String, value: 'Alex Rivera' } },
-    { handle: { type: String, value: '@alex' } },
-    { date: { type: String, value: 'Ahora' } },
-    { text: { type: String, value: '' } },
-    { image: { type: String, value: '' } },
-    { likes: { type: Number, value: 0 } },
-    { replies: { type: Number, value: 0 } },
-    { liked: { type: Boolean, value: false } },
-  ],
+  props: {
+    author: { type: String, value: 'Alex Rivera' },
+    handle: { type: String, value: '@alex' },
+    date: { type: String, value: 'Ahora' },
+    text: { type: String, value: '' },
+    image: { type: String, value: '' },
+    likes: { type: Number, value: 0 },
+    replies: { type: Number, value: 0 },
+    liked: { type: Boolean, value: false },
+  },
 })
 export class OkUiPostCard extends Okalit {
   toggleLike() {

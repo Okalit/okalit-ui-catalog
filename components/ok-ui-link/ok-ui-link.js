@@ -4,11 +4,11 @@ import styles from './ok-ui-link.css?inline';
 @defineElement({
   tag: 'ok-ui-link',
   styles: [styles],
-  props: [
-    { href: { type: String, value: '#' } },
-    { variant: { type: String, value: 'inline' } },
-    { external: { type: Boolean, value: false } },
-  ],
+  props: {
+    href: { type: String, value: '#' },
+    variant: { type: String, value: 'inline' },
+    external: { type: Boolean, value: false },
+  },
 })
 export class OkUiLink extends Okalit {
   render() {

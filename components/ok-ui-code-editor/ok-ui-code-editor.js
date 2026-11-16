@@ -4,12 +4,12 @@ import styles from './ok-ui-code-editor.css?inline';
 @defineElement({
   tag: 'ok-ui-code-editor',
   styles: [styles],
-  props: [
-    { label: { type: String, value: 'main.js' } },
-    { value: { type: String, value: 'const hello = "world";\n' } },
-    { language: { type: String, value: 'javascript' } },
-    { readonly: { type: Boolean, value: false } },
-  ],
+  props: {
+    label: { type: String, value: 'main.js' },
+    value: { type: String, value: 'const hello = "world";\n' },
+    language: { type: String, value: 'javascript' },
+    readonly: { type: Boolean, value: false },
+  },
 })
 export class OkUiCodeEditor extends Okalit {
   onAfterRender() {

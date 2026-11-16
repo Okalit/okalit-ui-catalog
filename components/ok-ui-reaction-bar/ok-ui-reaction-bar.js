@@ -4,7 +4,7 @@ import styles from './ok-ui-reaction-bar.css?inline';
 @defineElement({
   tag: 'ok-ui-reaction-bar',
   styles: [styles],
-  props: [{ reactions: { type: Array, value: [] } }, { selected: { type: String, value: '' } }],
+  props: { reactions: { type: Array, value: [] }, selected: { type: String, value: '' } },
 })
 export class OkUiReactionBar extends Okalit {
   react(emoji) {

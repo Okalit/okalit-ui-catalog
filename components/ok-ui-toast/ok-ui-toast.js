@@ -4,11 +4,11 @@ import styles from './ok-ui-toast.css?inline';
 @defineElement({
   tag: 'ok-ui-toast',
   styles: [styles],
-  props: [
-    { open: { type: Boolean, value: false } },
-    { tone: { type: String, value: 'info' } },
-    { duration: { type: Number, value: 4500 } },
-  ],
+  props: {
+    open: { type: Boolean, value: false },
+    tone: { type: String, value: 'info' },
+    duration: { type: Number, value: 4500 },
+  },
 })
 export class OkUiToast extends Okalit {
   onInit() {

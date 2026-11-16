@@ -4,11 +4,11 @@ import styles from './ok-ui-alert.css?inline';
 @defineElement({
   tag: 'ok-ui-alert',
   styles: [styles],
-  props: [
-    { tone: { type: String, value: 'info' } },
-    { title: { type: String, value: '' } },
-    { dismissible: { type: Boolean, value: false } },
-  ],
+  props: {
+    tone: { type: String, value: 'info' },
+    title: { type: String, value: '' },
+    dismissible: { type: Boolean, value: false },
+  },
 })
 export class OkUiAlert extends Okalit {
   constructor() {

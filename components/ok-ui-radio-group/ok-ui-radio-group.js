@@ -4,14 +4,14 @@ import styles from './ok-ui-radio-group.css?inline';
 @defineElement({
   tag: 'ok-ui-radio-group',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { label: { type: String, value: 'Choose one' } },
-    { options: { type: Array, value: [] } },
-    { value: { type: String, value: '' } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    label: { type: String, value: 'Choose one' },
+    options: { type: Array, value: [] },
+    value: { type: String, value: '' },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiRadioGroup extends Okalit {
   static formAssociated = true;

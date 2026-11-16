@@ -4,16 +4,16 @@ import styles from './ok-ui-file-upload.css?inline';
 @defineElement({
   tag: 'ok-ui-file-upload',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { label: { type: String, value: 'Adjuntar archivo' } },
-    { accept: { type: String, value: '' } },
-    { capture: { type: String, value: '' } },
-    { multiple: { type: Boolean, value: false } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-    { maxSize: { type: Number, value: 0 } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    label: { type: String, value: 'Adjuntar archivo' },
+    accept: { type: String, value: '' },
+    capture: { type: String, value: '' },
+    multiple: { type: Boolean, value: false },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+    maxSize: { type: Number, value: 0 },
+  },
 })
 export class OkUiFileUpload extends Okalit {
   static formAssociated = true;

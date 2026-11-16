@@ -4,15 +4,15 @@ import styles from './ok-ui-calendar.css?inline';
 @defineElement({
   tag: 'ok-ui-calendar',
   styles: [styles],
-  props: [
-    { name: { type: String, value: '' } },
-    { label: { type: String, value: 'Date' } },
-    { value: { type: String, value: '' } },
-    { min: { type: String, value: '' } },
-    { max: { type: String, value: '' } },
-    { required: { type: Boolean, value: false } },
-    { disabled: { type: Boolean, value: false } },
-  ],
+  props: {
+    name: { type: String, value: '' },
+    label: { type: String, value: 'Date' },
+    value: { type: String, value: '' },
+    min: { type: String, value: '' },
+    max: { type: String, value: '' },
+    required: { type: Boolean, value: false },
+    disabled: { type: Boolean, value: false },
+  },
 })
 export class OkUiCalendar extends Okalit {
   static formAssociated = true;
